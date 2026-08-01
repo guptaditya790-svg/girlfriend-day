@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/* ------------------------------
+   Root Variables
+------------------------------ */
+
+:root {
+  --background: #FFF8FC;
+  --foreground: #222222;
+
+  --primary: #FF4D8D;
+  --secondary: #FF7EB3;
+  --accent: #6A1B9A;
+}
+
+/* ------------------------------
+   Global Reset
+------------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), sans-serif;
+  overflow-x: hidden;
+}
+
+/* ------------------------------
+   Text Selection
+------------------------------ */
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* ------------------------------
+   Scrollbar
+------------------------------ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    var(--primary),
+    var(--secondary)
+  );
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
