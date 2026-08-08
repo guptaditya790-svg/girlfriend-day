@@ -32,19 +32,19 @@ export default function Hero() {
           }}
           className="mb-6 text-5xl font-extrabold leading-tight md:text-7xl"
         >
-          Happy Girlfriend Day ❤️
+          Happy Birthdayyy Motuujiii ❤️
         </motion.h1>
 
         <div className="mx-auto mb-8 max-w-2xl text-xl text-gray-700 md:text-2xl">
 
           <TypeAnimation
             sequence={[
-              "This website was made for only one person.",
-              1800,
-              "For the girl who changed my world forever ❤️",
-              1800,
-              "Every scroll is another memory of us.",
-              1800,
+              "Welcome motuuu jiii",
+              2000,
+              "Click the button on bottom right of screen",
+              2000,
+              "fir i hope every scroll worthsss...🫂💗",
+              2000,
             ]}
             wrapper="span"
             speed={55}

@@ -43,7 +43,7 @@ export default function LoveCounter() {
           viewport={{ once: true }}
           className="mb-4 text-center text-5xl font-bold"
         >
-          Together Since ❤️
+          Days you spent of 🌍
         </motion.h2>
 
         <motion.p
@@ -53,7 +53,7 @@ export default function LoveCounter() {
           viewport={{ once: true }}
           className="mx-auto mb-16 max-w-2xl text-center text-lg text-gray-600"
         >
-          Every second with you has become one of my favourite memories.
+          Also no. of nights, moon felt ordinary🌛
         </motion.p>
 
         {/* Counter Cards */}

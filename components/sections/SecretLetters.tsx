@@ -61,7 +61,7 @@ export default function SecretLetters() {
         </motion.div>
 
         <p className="mt-6 text-gray-500">
-          Click the envelope to reveal a surprise ❤️
+          Click the envelope to reveal a quality of Aditi ❤️
         </p>
 
         <AnimatePresence>

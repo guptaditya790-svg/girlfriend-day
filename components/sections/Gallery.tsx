@@ -26,15 +26,15 @@ export default function Gallery() {
             <motion.div
   key={photo.id}
   initial={{
-    opacity: 0,
-    y: 80,
-    rotate: index % 2 === 0 ? -8 : 8,
-  }}
-  whileInView={{
-    opacity: 1,
-    y: 0,
-    rotate: index % 2 === 0 ? -5 : 5,
-  }}
+  opacity: 1,
+  y: 0,
+  rotate: index % 2 === 0 ? -3 : 3,
+}}
+whileInView={{
+  opacity: 1,
+  y: 0,
+  rotate: index % 2 === 0 ? -3 : 3,
+}}
   whileHover={{
     scale: 1.08,
     rotate: 0,
@@ -44,10 +44,8 @@ export default function Gallery() {
     y: [0, -8, 0],
   }}
   transition={{
-    duration: 4 + index,
-    repeat: Infinity,
-    repeatType: "reverse",
-  }}
+  duration: 0.8,
+}}
   viewport={{ once: true }}
   className="
   relative

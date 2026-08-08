@@ -3,101 +3,96 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-interface Effect {
+interface Heart {
   id: number;
   x: number;
   y: number;
-  emoji: string;
+  heart: string;
+  dx: number;
+  dy: number;
+  rotate: number;
 }
 
-const emojis = ["❤️", "🌸", "✨", "💖", "🦋"];
+const heartTypes = ["❤️", "🦋", "💐", "🌻", "💓"];
 
 export default function HeartGarden() {
-  const [effects, setEffects] = useState<Effect[]>([]);
+  const [hearts, setHearts] = useState<Heart[]>([]);
 
-  function createMagic(
-    e: React.MouseEvent<HTMLDivElement>
-  ) {
+  function createHeartBurst(e: React.MouseEvent<HTMLElement>) {
     const rect = e.currentTarget.getBoundingClientRect();
 
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const centerX = e.clientX - rect.left;
+    const centerY = e.clientY - rect.top;
 
-    const newEffects: Effect[] = emojis.map((emoji, index) => ({
-      id: Date.now() + index,
-      x: x + (Math.random() - 0.5) * 80,
-      y: y + (Math.random() - 0.5) * 80,
-      emoji,
+    const newHearts: Heart[] = Array.from({ length: 12 }, (_, index) => ({
+      id: Date.now() + index + Math.random(),
+
+      x: centerX,
+      y: centerY,
+
+      heart:
+        heartTypes[
+          Math.floor(Math.random() * heartTypes.length)
+        ],
+
+      dx: (Math.random() - 0.5) * 220,
+
+      dy: -(Math.random() * 180 + 80),
+
+      rotate: (Math.random() - 0.5) * 60,
     }));
 
-    setEffects((prev) => [...prev, ...newEffects]);
+    setHearts((prev) => [...prev, ...newHearts]);
 
     setTimeout(() => {
-      setEffects((prev) =>
+      setHearts((prev) =>
         prev.filter(
           (item) =>
-            !newEffects.some((effect) => effect.id === item.id)
+            !newHearts.some((newHeart) => newHeart.id === item.id)
         )
       );
-    }, 2200);
+    }, 1800);
   }
 
   return (
     <section
-      onClick={createMagic}
-      className="relative flex h-screen cursor-pointer items-center justify-center overflow-hidden bg-gradient-to-br from-pink-100 via-[#FFF8FC] to-purple-100"
+      onClick={createHeartBurst}
+      className="relative flex h-screen cursor-pointer items-center justify-center overflow-hidden bg-pink-50"
     >
-      {/* Background Glow */}
-      <div className="absolute left-[-120px] top-10 h-72 w-72 rounded-full bg-pink-300/30 blur-3xl" />
-      <div className="absolute right-[-120px] bottom-10 h-80 w-80 rounded-full bg-purple-300/30 blur-3xl" />
-
-      {/* Glass Card */}
-      <motion.div
-        animate={{
-          y: [0, -10, 0],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-        }}
-        className="z-10 rounded-[36px] border border-white/40 bg-white/60 p-12 text-center shadow-[0_25px_60px_rgba(0,0,0,0.12)] backdrop-blur-xl"
-      >
-        <h2 className="text-5xl font-bold">
-          🌸 Heart Garden
-        </h2>
-
-        <p className="mt-6 text-lg text-gray-600">
-          Click anywhere and let love bloom.
-        </p>
-      </motion.div>
+      <h2 className="pointer-events-none z-20 text-center text-5xl font-bold">
+        Click Anywhere ❤️
+      </h2>
 
       <AnimatePresence>
-        {effects.map((effect) => (
+        {hearts.map((heart) => (
           <motion.div
-            key={effect.id}
+            key={heart.id}
             initial={{
               opacity: 1,
               scale: 0,
-              x: effect.x,
-              y: effect.y,
+              left: heart.x,
+              top: heart.y,
             }}
             animate={{
               opacity: 0,
-              scale: 1.8,
-              y: effect.y - 180,
-              x: effect.x + (Math.random() - 0.5) * 120,
-              rotate: Math.random() * 360,
+              scale: 1.5,
+              left: heart.x + heart.dx,
+              top: heart.y + heart.dy,
+              rotate: heart.rotate,
             }}
             exit={{
               opacity: 0,
             }}
             transition={{
-              duration: 2.2,
+              duration: 1.8,
               ease: "easeOut",
             }}
-            className="absolute text-4xl select-none"
+            className="pointer-events-none absolute z-10 text-3xl"
+            style={{
+              transform: "translate(-50%, -50%)",
+            }}
           >
-            {effect.emoji}
+            {heart.heart}
           </motion.div>
         ))}
       </AnimatePresence>
