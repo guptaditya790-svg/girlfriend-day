@@ -105,5 +105,17 @@ export const galleryImages: GalleryImage[] = [
     src: "/images/photo20.jpg",
     alt: "Memory 20",
   },
-
+{
+    id: 21,
+    src: "/images/photo21.jpg",
+    alt: "Memory 21",
+  },{
+    id: 22,
+    src: "/images/photo22.jpg",
+    alt: "Memory 22",
+  },{
+    id: 23,
+    src: "/images/photo23.jpg",
+    alt: "Memory 23",
+  },
 ];

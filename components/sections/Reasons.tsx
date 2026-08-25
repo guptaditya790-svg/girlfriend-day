@@ -30,7 +30,7 @@ export default function Reasons() {
           viewport={{ once: true }}
           className="mb-20 text-center text-5xl font-bold"
         >
-          100 Reasons I Love You ❤️
+          100 pieces of usss ❤️
         </motion.h2>
 
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
@@ -107,7 +107,7 @@ export default function Reasons() {
                       <p className="text-5xl mb-4">❤️</p>
 
                       <h3 className="text-2xl font-bold">
-                        Reason #{reason.id}
+                        Piece no. #{reason.id}
                       </h3>
 
                       <p className="mt-3 text-gray-500">

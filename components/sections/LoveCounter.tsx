@@ -43,7 +43,7 @@ export default function LoveCounter() {
           viewport={{ once: true }}
           className="mb-4 text-center text-5xl font-bold"
         >
-          Days you spent of 🌍
+          Days you spent on 🌍
         </motion.h2>
 
         <motion.p

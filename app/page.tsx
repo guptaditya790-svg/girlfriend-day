@@ -15,6 +15,7 @@ import FinalLetter from "@/components/sections/FinalLetter";
 import FinalSurprise from "@/components/sections/FinalSurprise";
 import Ending from "@/components/sections/Ending";
 import MusicPlayer from "@/components/ui/MusicPlayer";
+import MusicSection from "@/components/sections/MusicSection";
 
 export default function Home() {
   useLenis();
@@ -35,6 +36,7 @@ export default function Home() {
 <>
   <MusicPlayer />
   <Hero />
+  <MusicSection />
   <Timeline />
   <Gallery />
   <LoveCounter />
