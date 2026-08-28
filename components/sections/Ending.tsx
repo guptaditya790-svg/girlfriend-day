@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import VoiceNote from "@/components/sections/VoiceNote";
 
 const stars = Array.from({ length: 80 }, (_, i) => ({
   id: i,
@@ -60,7 +61,7 @@ export default function Ending() {
         className="relative z-10 text-center text-white"
       >
         <h2 className="mb-8 text-6xl font-bold">
-          Happy Girlfriend Day ❤️
+          Happy BirthDay Motuuu ❤️
         </h2>
 
         <p className="mx-auto max-w-2xl text-2xl leading-10 text-pink-100">
@@ -71,13 +72,13 @@ export default function Ending() {
           I hope this made you smile.
           <br />
           <br />
-          I love you.
+          I lovee uhh 🫂❤️
         </p>
-
+<VoiceNote />
         <p className="mt-16 text-xl text-pink-300">
           — Forever Yours,
           <br />
-          Aditya ❤️
+          Aditya(chotu) ❤️
         </p>
       </motion.div>
 

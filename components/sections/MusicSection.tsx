@@ -19,374 +19,300 @@ export default function MusicSection() {
         setPlaying(true);
       }
     } catch (error) {
-      console.error(error);
+      console.error("Audio error:", error);
     }
   }
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#FFF8FC] via-[#FCEEFF] to-[#FFF8FC] px-4 py-20 sm:px-6 sm:py-28">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#fff8fc] via-[#fcecff] to-[#fff8fc] px-4 py-20">
 
-      {/* Decorative hearts */}
+      {/* Background hearts */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <span className="absolute left-[8%] top-[12%] text-2xl opacity-50">
+          ♡
+        </span>
+
+        <span className="absolute right-[10%] top-[25%] text-2xl opacity-40">
+          ♡
+        </span>
+
+        <span className="absolute left-[15%] bottom-[20%] text-xl opacity-40">
+          ♡
+        </span>
+
+        <span className="absolute right-[18%] bottom-[15%] text-xl opacity-40">
+          ♡
+        </span>
+      </div>
+
+      {/* Heading */}
       <motion.div
-        animate={{ y: [0, -12, 0], rotate: [0, 8, 0] }}
-        transition={{ duration: 4, repeat: Infinity }}
-        className="absolute left-[8%] top-20 text-2xl opacity-40"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 mx-auto mb-10 max-w-3xl text-center"
       >
-        ♡
+        <p className="mb-2 text-xs font-semibold tracking-[0.45em] text-pink-400 sm:text-sm">
+          A LITTLE SOUNDTRACK
+        </p>
+
+        <h2 className="text-4xl font-extrabold tracking-tight text-[#111827] sm:text-6xl">
+          A Song For You 🎵
+        </h2>
+
+        <p className="mt-4 text-base text-gray-600 sm:text-xl">
+          Some songs are just songs.
+          <br />
+          And then there are songs that somehow become memories. 💗
+        </p>
       </motion.div>
 
-      <motion.div
-        animate={{ y: [0, 15, 0], rotate: [0, -8, 0] }}
-        transition={{ duration: 5, repeat: Infinity }}
-        className="absolute right-[10%] top-32 text-3xl opacity-40"
-      >
-        ♡
-      </motion.div>
+      {/* Main music area */}
+      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center">
 
-      <div className="relative mx-auto max-w-5xl text-center">
-
-        {/* Heading */}
+        {/* Cassette + Aditi */}
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9, y: 30 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-pink-400 sm:text-sm">
-            A little soundtrack
-          </p>
-
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-            A Song For You 🎵
-          </h2>
-
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-gray-500 sm:text-lg">
-            Some songs are just songs.
-            <br />
-            And then there are songs that somehow become memories. ❤️
-          </p>
-        </motion.div>
-
-        {/* CASSETTE */}
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 60,
-            scale: 0.94,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="mx-auto mt-12 w-full max-w-[580px] sm:mt-14"
+          transition={{ duration: 0.9 }}
+          className="relative w-full max-w-[620px]"
         >
 
-          <div className="relative">
-
-            {/* Glow */}
-            <motion.div
-              animate={{
-                opacity: playing ? [0.25, 0.5, 0.25] : 0.25,
-                scale: playing ? [1, 1.05, 1] : 1,
-              }}
-              transition={{
-                duration: 2,
-                repeat: playing ? Infinity : 0,
-              }}
-              className="absolute inset-x-8 bottom-[-20px] h-14 rounded-full bg-pink-300/40 blur-2xl"
-            />
-
-            {/* Cassette body */}
-            <div
-              className="
-                relative
-                overflow-hidden
-                rounded-[28px]
-                border border-white/70
-                bg-gradient-to-br
-                from-[#efabc4]
-                via-[#e8a6c5]
-                to-[#c98fc6]
-                p-3
-                shadow-[0_30px_70px_rgba(190,100,160,0.30)]
-                sm:rounded-[36px]
-                sm:p-6
-              "
-            >
-
-              {/* Shine */}
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-white/10" />
-
-              {/* Inner cassette panel */}
-              <div
-                className="
-                  relative
-                  rounded-[22px]
-                  border border-white/40
-                  bg-gradient-to-br from-[#dda0ba] to-[#c18ac0]
-                  p-3
-                  shadow-inner
-                  sm:rounded-[28px]
-                  sm:p-5
-                "
-              >
-
-                {/* TOP LABEL */}
-                <div
-                  className="
-                    relative
-                    rounded-2xl
-                    border border-white/60
-                    bg-[#fff5f8]
-                    px-4
-                    py-3
-                    shadow-lg
-                    sm:px-6
-                    sm:py-4
-                  "
-                >
-                  <div className="flex items-center justify-between">
-
-                    <div className="text-left">
-                      <p className="text-[8px] font-bold uppercase tracking-[0.25em] text-pink-400 sm:text-xs">
-                        Birthday Tape
-                      </p>
-
-                      <h3 className="mt-1 text-xl font-black tracking-wide text-gray-800 sm:text-3xl">
-                        ADITI ❤️
-                      </h3>
-                    </div>
-
-                    <div className="text-right">
-                      <p className="text-[8px] font-semibold uppercase tracking-widest text-gray-400 sm:text-xs">
-                        SIDE A
-                      </p>
-
-                      <p className="mt-1 text-[10px] text-gray-400 sm:text-sm">
-                        ♥ 01
-                      </p>
-                    </div>
-
-                  </div>
-                </div>
-
-                {/* REELS */}
-                <div className="relative mt-4 h-[145px] sm:mt-6 sm:h-[190px]">
-
-                  {/* Tape window */}
-                  <div
-                    className="
-                      absolute
-                      left-1/2
-                      top-1/2
-                      h-[58px]
-                      w-[200px]
-                      -translate-x-1/2
-                      -translate-y-1/2
-                      rounded-[50%]
-                      border-[6px]
-                      border-[#ae6fa1]
-                      bg-[#f7d3e3]/70
-                      shadow-inner
-                      sm:h-[82px]
-                      sm:w-[290px]
-                    "
-                  />
-
-                  {/* Left reel */}
-                  <motion.div
-                    animate={{
-                      rotate: playing ? 360 : 0,
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: playing ? Infinity : 0,
-                      ease: "linear",
-                    }}
-                    className="
-                      absolute
-                      left-[7%]
-                      top-1/2
-                      flex
-                      h-[90px]
-                      w-[90px]
-                      -translate-y-1/2
-                      items-center
-                      justify-center
-                      rounded-full
-                      border-[7px]
-                      border-[#f6d6e4]
-                      bg-[#b16fa3]
-                      shadow-lg
-                      sm:left-[10%]
-                      sm:h-[125px]
-                      sm:w-[125px]
-                    "
-                  >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f8d7e5] sm:h-14 sm:w-14">
-                      <div className="h-4 w-4 rounded-full bg-[#a76699] sm:h-6 sm:w-6" />
-                    </div>
-
-                    <div className="absolute h-full w-[2px] rotate-45 bg-[#e8bfd2]/60" />
-                    <div className="absolute h-full w-[2px] -rotate-45 bg-[#e8bfd2]/60" />
-                  </motion.div>
-
-                  {/* Right reel */}
-                  <motion.div
-                    animate={{
-                      rotate: playing ? -360 : 0,
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: playing ? Infinity : 0,
-                      ease: "linear",
-                    }}
-                    className="
-                      absolute
-                      right-[7%]
-                      top-1/2
-                      flex
-                      h-[90px]
-                      w-[90px]
-                      -translate-y-1/2
-                      items-center
-                      justify-center
-                      rounded-full
-                      border-[7px]
-                      border-[#f6d6e4]
-                      bg-[#b16fa3]
-                      shadow-lg
-                      sm:right-[10%]
-                      sm:h-[125px]
-                      sm:w-[125px]
-                    "
-                  >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f8d7e5] sm:h-14 sm:w-14">
-                      <div className="h-4 w-4 rounded-full bg-[#a76699] sm:h-6 sm:w-6" />
-                    </div>
-
-                    <div className="absolute h-full w-[2px] rotate-45 bg-[#e8bfd2]/60" />
-                    <div className="absolute h-full w-[2px] -rotate-45 bg-[#e8bfd2]/60" />
-                  </motion.div>
-
-                </div>
-
-                {/* SONG INFORMATION ON CASSETTE */}
-<div className="mt-1 rounded-2xl border border-white/50 bg-[#fff3f7] px-4 py-3 shadow-lg sm:px-6 sm:py-4">
-
-  <p className="text-center text-[8px] font-bold uppercase tracking-[0.25em] text-pink-400 sm:text-xs">
-    Aditi's Favourite
-  </p>
-
-  <h4 className="mt-1 text-center text-lg font-black text-gray-800 sm:text-2xl">
-    Gehra Hua 🦋❤️
-  </h4>
-
-  {/* CENTERED PLAY BUTTON */}
-  <div className="mt-2 flex justify-center">
-    <motion.button
-      onClick={toggleMusic}
-      whileHover={{ scale: 1.08 }}
-      whileTap={{ scale: 0.94 }}
-      className="
-        flex
-        items-center
-        gap-2
-        rounded-full
-        bg-pink-500
-        px-5
-        py-2
-        text-sm
-        font-bold
-        text-white
-        shadow-lg
-        shadow-pink-300/40
-        sm:px-6
-        sm:py-2.5
-        sm:text-base
-      "
-    >
-      <span>
-        {playing ? "⏸" : "▶"}
-      </span>
-
-      <span>
-        {playing ? "Pause" : "Play"}
-      </span>
-
-      {/* Equalizer */}
-      <span className="flex h-4 items-end gap-[2px]">
-        {[1, 2, 3, 4].map((bar) => (
-          <motion.span
-            key={bar}
-            animate={
-              playing
-                ? {
-                    height: [
-                      "5px",
-                      "14px",
-                      "8px",
-                      "13px",
-                      "5px",
-                    ],
-                  }
-                : {
-                    height: "5px",
-                  }
-            }
-            transition={{
-              duration: 0.8,
-              repeat: playing ? Infinity : 0,
-              delay: bar * 0.1,
-            }}
-            className="w-[2px] rounded-full bg-white"
+          {/* Aditi sticker */}
+          <motion.img
+            src="/images/aditi-sticker1.png"
+            alt="Aditi"
+            initial={{ opacity: 0, y: 30, rotate: 0}}
+            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="
+              pointer-events-none
+              absolute
+              -right-3
+              -bottom-2
+              z-30
+              w-24
+              drop-shadow-2xl
+              sm:-right-8
+              sm:w-32
+              md:-right-12
+              md:w-40
+            "
           />
-        ))}
-      </span>
-    </motion.button>
-  </div>
+          <motion.img
+  src="/images/aditi-sticker3.png"
+  alt="Aditi"
+  initial={{ opacity: 0, y: 30, rotate: -6 }}
+  whileInView={{ opacity: 1, y: 0, rotate: -6 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8, delay: 0.6 }}
+  className="
+    pointer-events-none
+    absolute
+    -left-9
+    bottom-0
+    z-30
+    w-24
+    drop-shadow-2xl
+    sm:-left-10
+    sm:w-32
+    md:-left-22
+    md:w-40
+  "
+/>
 
-  <p className="mt-1 text-center text-[10px] text-gray-500 sm:text-xs">
-    A little piece of your favourite song. 💗
-  </p>
+          {/* Cassette */}
+          <div
+            className="
+              relative
+              overflow-hidden
+              rounded-[28px]
+              border-2
+              border-white/70
+              bg-[#d99ac3]
+              shadow-[0_25px_70px_rgba(170,80,140,0.30)]
+            "
+          >
 
-</div>
+            {/* Cassette top label */}
+            <div className="relative flex items-center justify-between bg-[#fff7fb] px-4 py-3 sm:px-6">
 
-                {/* Bottom cassette details */}
-                <div className="mt-3 flex items-center justify-between px-1 text-[7px] font-bold uppercase tracking-[0.2em] text-white/80 sm:px-3 sm:text-[10px]">
-                  <span>Love Records</span>
-                  <span>Made With ❤️</span>
-                </div>
+              <div>
+                <p className="text-[9px] font-bold tracking-[0.3em] text-pink-400 sm:text-xs">
+                  BIRTHDAY MIXTAPE
+                </p>
 
+                <h3 className="text-xl font-black tracking-wide text-[#172033] sm:text-3xl">
+                  ADITI ❤️
+                </h3>
               </div>
 
-              {/* Bottom screws */}
-              <div className="mt-3 flex justify-between px-3 sm:mt-4 sm:px-5">
-                <div className="h-2 w-2 rounded-full bg-white/60 shadow-inner" />
-                <div className="h-2 w-2 rounded-full bg-white/60 shadow-inner" />
+              <div className="text-right text-[9px] font-bold text-gray-400 sm:text-xs">
+                <p>SIDE A</p>
+                <p>♥ 01</p>
+              </div>
+
+            </div>
+
+            {/* Cassette body */}
+            <div className="relative h-[250px] bg-[#d495bd] sm:h-[300px]">
+
+              {/* Tape window */}
+              <div
+                className="
+                  absolute
+                  left-1/2
+                  top-1/2
+                  h-[70px]
+                  w-[48%]
+                  -translate-x-1/2
+                  -translate-y-1/2
+                  rounded-[50%]
+                  border-[7px]
+                  border-[#a85e9b]
+                  bg-[#edc3d9]
+                  sm:h-[85px]
+                "
+              />
+
+              {/* Left reel */}
+              <div
+                className="
+                  absolute
+                  left-[15%]
+                  top-1/2
+                  flex
+                  h-[95px]
+                  w-[95px]
+                  -translate-y-1/2
+                  items-center
+                  justify-center
+                  rounded-full
+                  border-[7px]
+                  border-[#f9e8f2]
+                  bg-[#b875aa]
+                  shadow-lg
+                  sm:h-[120px]
+                  sm:w-[120px]
+                "
+              >
+                <div className="h-[42px] w-[42px] rounded-full border-[7px] border-[#f9e8f2] bg-[#a45b98] sm:h-[55px] sm:w-[55px]" />
+              </div>
+
+              {/* Right reel */}
+              <div
+                className="
+                  absolute
+                  right-[15%]
+                  top-1/2
+                  flex
+                  h-[95px]
+                  w-[95px]
+                  -translate-y-1/2
+                  items-center
+                  justify-center
+                  rounded-full
+                  border-[7px]
+                  border-[#f9e8f2]
+                  bg-[#b875aa]
+                  shadow-lg
+                  sm:h-[120px]
+                  sm:w-[120px]
+                "
+              >
+                <div className="h-[42px] w-[42px] rounded-full border-[7px] border-[#f9e8f2] bg-[#a45b98] sm:h-[55px] sm:w-[55px]" />
+              </div>
+
+              {/* Tape lines */}
+              <div className="absolute left-[15%] right-[15%] top-1/2 h-[3px] -translate-y-1/2 bg-[#a85e9b]/60" />
+
+              {/* Bottom cassette text */}
+              <div className="absolute bottom-3 left-4 right-4 flex justify-between text-[8px] font-bold tracking-[0.2em] text-white/90 sm:text-[10px]">
+                <span>LOVE RECORDS</span>
+                <span>MADE WITH ❤️</span>
               </div>
 
             </div>
           </div>
         </motion.div>
 
+        {/* Song information */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-8 text-center"
+        >
+
+          <p className="text-xs font-semibold tracking-[0.35em] text-pink-400">
+            ADITI'S FAVOURITE
+          </p>
+
+          <h3 className="mt-1 text-2xl font-bold text-[#27324a] sm:text-3xl">
+            Gehra Hua 🦋❤️
+          </h3>
+
+          <p className="mt-2 text-sm text-gray-500 sm:text-base">
+            A song waiting to become another memory.
+          </p>
+
+        </motion.div>
+
+        {/* Play button */}
+        <motion.button
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.94 }}
+          onClick={toggleMusic}
+          className="
+            mt-6
+            flex
+            items-center
+            gap-3
+            rounded-full
+            bg-pink-500
+            px-7
+            py-3
+            text-base
+            font-bold
+            text-white
+            shadow-[0_10px_30px_rgba(236,72,153,0.35)]
+            transition-all
+            hover:bg-pink-600
+            sm:px-9
+            sm:py-4
+            sm:text-lg
+          "
+        >
+          <span className="text-xl">
+            {playing ? "⏸" : "▶"}
+          </span>
+
+          <span>
+            {playing ? "Pause Our Song" : "Play Our Song"}
+          </span>
+
+          <span className="text-sm">
+            {playing ? "♪ ♫ ♪" : "•••"}
+          </span>
+        </motion.button>
+
+        {/* Hidden audio */}
+        <audio
+          ref={audioRef}
+          loop
+          preload="auto"
+        >
+          <source
+            src="/audio/love-song.mp3"
+            type="audio/mpeg"
+          />
+        </audio>
+
       </div>
-
-      {/* Audio */}
-      <audio
-        ref={audioRef}
-        loop
-        preload="auto"
-      >
-        <source
-          src="/audio/love-song.mp3"
-          type="audio/mpeg"
-        />
-      </audio>
-
     </section>
   );
 }

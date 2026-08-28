@@ -14,7 +14,6 @@ import Promises from "@/components/sections/Promises";
 import FinalLetter from "@/components/sections/FinalLetter";
 import FinalSurprise from "@/components/sections/FinalSurprise";
 import Ending from "@/components/sections/Ending";
-import MusicPlayer from "@/components/ui/MusicPlayer";
 import MusicSection from "@/components/sections/MusicSection";
 
 export default function Home() {
@@ -34,7 +33,7 @@ export default function Home() {
 
       {loadingFinished && (
 <>
-  <MusicPlayer />
+  
   <Hero />
   <MusicSection />
   <Timeline />
