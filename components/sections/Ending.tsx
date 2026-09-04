@@ -69,10 +69,10 @@ export default function Ending() {
           <br />
           Thank you for making my life brighter.
           <br />
-          I hope this made you smile.
+          I hope you gave a kadakk smile now!!😁
           <br />
           <br />
-          I lovee uhh 🫂❤️
+          I lovee uhh Guddaa 🫂❤️
         </p>
 <VoiceNote />
         <p className="mt-16 text-xl text-pink-300">

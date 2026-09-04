@@ -55,7 +55,7 @@ export default function LoadingScreen({
           </motion.div>
 
           <h2 className="mt-6 text-2xl font-semibold">
-            Loading our memories...
+            Loading the surprisee👀
           </h2>
 
           <div className="mt-8 h-3 overflow-hidden rounded-full bg-pink-100">

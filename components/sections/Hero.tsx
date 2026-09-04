@@ -95,7 +95,7 @@ export default function Hero() {
             md:text-7xl
           "
         >
-          Happy Birthdayyy Motuujiii ❤️
+          Happy Birthdayyy Motuuji❤️
         </motion.h1>
 
         <div className="mx-auto mb-8 max-w-2xl text-xl text-gray-700 md:text-2xl">
@@ -104,9 +104,9 @@ export default function Hero() {
             sequence={[
               "Welcome motuuu jiii",
               2000,
-              "Click the button on bottom right of screen",
+              "Scroll and enjoyy the surprise",
               2000,
-              "fir i hope every scroll worthsss...🫂💗",
+              "i hope every scroll worthsss...🫂💗",
               2000,
             ]}
             wrapper="span"

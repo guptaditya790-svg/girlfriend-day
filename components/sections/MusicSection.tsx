@@ -62,9 +62,9 @@ export default function MusicSection() {
         </h2>
 
         <p className="mt-4 text-base text-gray-600 sm:text-xl">
-          Some songs are just songs.
+         Tere dil ke kareeb yeh gaana🎶
           <br />
-          And then there are songs that somehow become memories. 💗
+           💗
         </p>
       </motion.div>
 
@@ -231,8 +231,8 @@ export default function MusicSection() {
 
               {/* Bottom cassette text */}
               <div className="absolute bottom-3 left-4 right-4 flex justify-between text-[8px] font-bold tracking-[0.2em] text-white/90 sm:text-[10px]">
-                <span>LOVE RECORDS</span>
-                <span>MADE WITH ❤️</span>
+                <span></span>
+                <span></span>
               </div>
 
             </div>
@@ -253,11 +253,11 @@ export default function MusicSection() {
           </p>
 
           <h3 className="mt-1 text-2xl font-bold text-[#27324a] sm:text-3xl">
-            Gehra Hua 🦋❤️
+           Darkhaast 🦋❤️
           </h3>
 
           <p className="mt-2 text-sm text-gray-500 sm:text-base">
-            A song waiting to become another memory.
+            Right from my 🫀
           </p>
 
         </motion.div>

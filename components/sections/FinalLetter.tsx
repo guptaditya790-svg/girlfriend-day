@@ -11,7 +11,7 @@ export default function FinalLetter() {
         min-h-screen
         items-center
         justify-center
-        overflow-hidden
+        overflow-visible
         px-4
         py-20
         sm:px-6
@@ -30,7 +30,8 @@ export default function FinalLetter() {
 
       <div className="relative z-10 w-full max-w-3xl">
 
-        {/* Heading */}
+        {/* ================= HEADING ================= */}
+
         <motion.h2
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,28 +48,93 @@ export default function FinalLetter() {
             md:text-6xl
           "
         >
-          A Letter For You 💖
+          A Poem For You 💖
         </motion.h2>
 
-        {/* LETTER */}
+
+        {/* ================= ADITI STICKER ================= */}
+
+        <motion.img
+          src="/images/aditi-sticker6.png"
+          alt="Aditi"
+
+          initial={{
+            opacity: 0,
+            x: 35,
+            y: 35,
+            rotate: 0,
+          }}
+
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            y: -15,
+            rotate: 0,
+          }}
+
+          viewport={{
+            once: true,
+          }}
+
+          transition={{
+            duration: 1,
+            delay: 0.5,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+
+          animate={{
+            y: [0, -6, 0],
+          }}
+
+          className="
+            pointer-events-none
+            absolute
+            z-30
+
+            /* PHONE */
+            right-0
+            top-20
+            w-20
+
+            /* TABLET */
+            sm:-right-2
+            sm:top-24
+            sm:w-28
+
+            /* LAPTOP */
+            md:-right-20
+            md:top-24
+            md:w-36
+
+            drop-shadow-[0_15px_20px_rgba(0,0,0,0.18)]
+          "
+        />
+
+
+        {/* ================= LETTER ================= */}
+
         <motion.div
           initial={{
             opacity: 0,
             scaleY: 0.06,
             transformOrigin: "top center",
           }}
+
           whileInView={{
             opacity: 1,
             scaleY: 1,
           }}
+
           viewport={{
             once: true,
             amount: 0.18,
           }}
+
           transition={{
             duration: 1.8,
             ease: [0.22, 1, 0.36, 1],
           }}
+
           className="
             relative
             origin-top
@@ -81,7 +147,8 @@ export default function FinalLetter() {
           "
         >
 
-          {/* TOP ROLL */}
+          {/* ================= TOP ROLL ================= */}
+
           <div
             className="
               relative
@@ -100,7 +167,9 @@ export default function FinalLetter() {
             "
           />
 
-          {/* PAPER */}
+
+          {/* ================= PAPER ================= */}
+
           <div
             className="
               px-6
@@ -113,23 +182,28 @@ export default function FinalLetter() {
           >
 
             {/* Letter content */}
+
             <motion.div
               initial={{
                 opacity: 0,
                 y: 25,
               }}
+
               whileInView={{
                 opacity: 1,
                 y: 0,
               }}
+
               viewport={{
                 once: true,
                 amount: 0.15,
               }}
+
               transition={{
                 delay: 1.1,
                 duration: 0.9,
               }}
+
               className="
                 space-y-7
                 text-[17px]
@@ -141,79 +215,105 @@ export default function FinalLetter() {
             >
 
               <p className="font-medium text-slate-800">
-                My Dearest Aditi,
+                       मोमबत्ती🕯️,
               </p>
+
+
+              <p className="mb-6">
+                Mujh मोमबत्ती ki baati hai तू 🕯️ , <br />
+                tujh bin sirf मोम ka ढेर hu,<br />
+                Tujhse जलकर hai उम्मीद ki roshni🌟 <br />
+                Aakhir khatam toh dono ko saath hi hona hai !!!🫂
+              </p>
+
 
               <p>
-                Every moment with you has become one of my favorite
-                memories.
+                Mere अंदर reh, संभल kar<br />
+                Na dikh kar bhi, bhot एहम hai...<br />
+                Kisi ne तोड़ना चाहा , toh टूटकर bhi ना टूटुंगा ,<br />
+                Pta hai, पकड़े rakhegi अंदर se tu..
               </p>
 
-              <p>
-                Thank you for making ordinary days feel special,
-                for making me smile when I needed it the most,
-                and for simply being you.
+
+              <p className="mb-6">
+                Jalti hai, shaan se mere सिर par,<br />
+                Aakhir एकलौती sajawat Jo hai meri, <br />
+                तू jalti, toh दर्द hota मुझे bhi,<br />
+                Dekhe होंगे, mere पिघले aansu,<br />
+                खड़ा hona bhi मुश्किल hai उनके bina ......
               </p>
 
-              <p>
-                No matter what life brings, I promise to always
-                cherish you, respect you, and stand beside you.
+
+              <p className="pt-2 font-medium text-slate-800"> 
+
+                  
+
+
+                This poem portrays you as the lit of the candle and me as its wax❤️🙃.
+
               </p>
 
-              <p className="pt-2 font-medium text-slate-800">
-                Happy Girlfriend Day ❤️
-              </p>
 
-              {/* Voice note placeholder */}
+              {/* ================= VOICE NOTE ================= */}
+
               <div className="pt-4">
-                {/* 
-                  Your VoiceNote component can go here later.
-
-                  Example:
-
-                  <VoiceNote />
-                */}
+                {/* Voice note can go here later */}
               </div>
 
-              {/* Signature */}
+
+              {/* ================= SIGNATURE ================= */}
+
               <motion.div
                 initial={{
                   opacity: 0,
                   y: 15,
                 }}
+
                 whileInView={{
                   opacity: 1,
                   y: 0,
                 }}
+
                 viewport={{
                   once: true,
                 }}
+
                 transition={{
                   delay: 1.5,
                   duration: 0.8,
                 }}
+
                 className="
                   pt-5
                   text-right
                   text-slate-700
                 "
               >
-                <p>Forever yours,</p>
 
-                <p className="
-                  mt-1
-                  text-xl
-                  font-semibold
-                  text-pink-500
-                ">
-                  Aditya ❤️
+                <p>
+                
                 </p>
+
+                <p
+                  className="
+                    mt-1
+                    text-xl
+                    font-semibold
+                    text-pink-500
+                  "
+                >
+                  --chotu ❤️🫂
+                </p>
+
               </motion.div>
 
             </motion.div>
+
           </div>
 
-          {/* BOTTOM ROLL */}
+
+          {/* ================= BOTTOM ROLL ================= */}
+
           <div
             className="
               relative
@@ -234,23 +334,29 @@ export default function FinalLetter() {
 
         </motion.div>
 
-        {/* Tiny ending heart */}
+
+        {/* ================= ENDING HEART ================= */}
+
         <motion.div
           initial={{
             opacity: 0,
             scale: 0.5,
           }}
+
           whileInView={{
             opacity: 1,
             scale: 1,
           }}
+
           viewport={{
             once: true,
           }}
+
           transition={{
             delay: 2,
             duration: 0.6,
           }}
+
           className="
             mt-8
             text-center
